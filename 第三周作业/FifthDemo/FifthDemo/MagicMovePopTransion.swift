@@ -16,10 +16,13 @@ class MagicMovePopTransion: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! DetailViewController
+        
         let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! ViewController
+        
         let container = transitionContext.containerView
         
         let snapshotView = fromVC.imageView.snapshotView(afterScreenUpdates: false)
+        
         snapshotView?.frame = container.convert(fromVC.imageView.frame, from: fromVC.view)
         fromVC.imageView.isHidden = true
         
