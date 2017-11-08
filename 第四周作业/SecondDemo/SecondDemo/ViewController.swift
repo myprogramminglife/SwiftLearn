@@ -81,8 +81,8 @@ class ViewController: UIViewController,CAAnimationDelegate {
         }
     }
     
-    func basicAnimationWith(duration:CGFloat,fromValue:Any,toValue:Any,keyPath:String)-> CABasicAnimation{
-        let animation = CABasicAnimation.init(keyPath: keyPath)
+    func basicAnimationWith(duration:CGFloat,fromValue:Any,toValue:Any,keyPath:String)-> CASpringAnimation{
+        let animation = CASpringAnimation.init(keyPath: keyPath)
         animation.fromValue = fromValue
         animation.toValue = toValue
         animation.duration = CFTimeInterval(duration)
