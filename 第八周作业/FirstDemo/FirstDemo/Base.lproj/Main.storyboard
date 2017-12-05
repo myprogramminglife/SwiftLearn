@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mOf-Ou-xez">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bubble Tea!-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FirstDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Pu-bB-TXw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CYz-vv-6vc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7eQ-7U-3gN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Pu-bB-TXw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1vP-Ij-gj6"/>
+                            <constraint firstItem="3Pu-bB-TXw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2JJ-3I-eVS"/>
+                            <constraint firstItem="3Pu-bB-TXw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Xj6-5s-8Rg"/>
+                            <constraint firstItem="3Pu-bB-TXw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fec-iO-0lK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bubble Tea!" id="s5w-Kv-EtJ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="iVC-b6-mWa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8em-RR-bb0">
+                                <rect key="frame" x="313" y="5" width="46" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <segue destination="ouc-ds-jdR" kind="show" id="YlL-v4-Stc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="table" destination="3Pu-bB-TXw" id="Mh5-Lq-Mpg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="s3H-He-rIU">
+            <objects>
+                <viewController storyboardIdentifier="FilterViewController" id="ouc-ds-jdR" customClass="FilterViewController" customModule="FirstDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQ2-5j-0yG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3Bv-NA-aQv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ouc-ds-jdR" id="5HA-5S-6RU"/>
+                                    <outlet property="delegate" destination="ouc-ds-jdR" id="ceU-U9-pUj"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-4l-aId">
+                                <rect key="frame" x="313" y="33" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Bv-NA-aQv" firstAttribute="top" secondItem="JaK-UG-8SL" secondAttribute="top" id="21N-M8-iHB"/>
+                            <constraint firstItem="3Bv-NA-aQv" firstAttribute="leading" secondItem="JaK-UG-8SL" secondAttribute="leading" id="FHt-Rb-0qP"/>
+                            <constraint firstItem="3Bv-NA-aQv" firstAttribute="bottom" secondItem="JaK-UG-8SL" secondAttribute="bottom" id="I2o-G9-BtQ"/>
+                            <constraint firstItem="3Bv-NA-aQv" firstAttribute="trailing" secondItem="JaK-UG-8SL" secondAttribute="trailing" id="nyk-0w-Cdm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JaK-UG-8SL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter" id="XF2-oM-Qgw">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ahV-1V-xOE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rni-7P-HzI">
+                                <rect key="frame" x="302" y="5" width="57" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="pop:" destination="ouc-ds-jdR" eventType="touchUpInside" id="chQ-Qe-w6T"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFU-0k-pYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288.8" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QtP-8S-bs5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mOf-Ou-xez" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lZl-Nj-eFV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Vin-A2-iBi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaA-cu-m2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="134"/>
+        </scene>
+    </scenes>
+</document>
