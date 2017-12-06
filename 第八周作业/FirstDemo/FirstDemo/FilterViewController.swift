@@ -88,27 +88,24 @@ class FilterViewController: UIViewController,UITableViewDataSource,UITableViewDe
         }
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
         
-        
         if indexPath.row == 0&&indexPath.section == 0 {
-            self.conditions = "$"
+            self.conditions = "SELECT * FROM Tea where price='$'"
         }else if indexPath.row == 1&&indexPath.section == 0 {
-            self.conditions = "$$"
+            self.conditions = "SELECT * FROM Tea where price='$$'"
         }else if indexPath.row == 2&&indexPath.section == 0 {
-            self.conditions = "$$$"
-        }else if indexPath.row == 0&&indexPath.section == 1 {
-            self.conditions = "Offering a deal"
+            self.conditions = "SELECT * FROM Tea where price='$$$'"
         }else if indexPath.row == 1&&indexPath.section == 1 {
-            self.conditions = "Within walking distance"
-        }else if indexPath.row == 2&&indexPath.section == 1 {
-            self.conditions = "Has User Tips"
+            self.conditions = "SELECT * FROM Tea where distance < 500"
+        }else if (indexPath.row == 2&&indexPath.section == 1) || (indexPath.row == 0&&indexPath.section == 1) {
+            self.conditions = "SELECT * FROM Tea order by tier asc;"
         }else if indexPath.row == 0&&indexPath.section == 2 {
-            self.conditions = "Name(A-Z)"
+            self.conditions = "SELECT * FROM Tea order by name asc;"
         }else if indexPath.row == 1&&indexPath.section == 2 {
-            self.conditions = "Name(Z-A)"
+            self.conditions = "SELECT * FROM Tea order by name desc;"
         }else if indexPath.row == 2&&indexPath.section == 2 {
-            self.conditions = "Distance"
+            self.conditions = "SELECT * FROM Tea order by distance asc;"
         }else{
-            self.conditions = "Price"
+            self.conditions = "SELECT * FROM Tea order by price asc;"
         }
         
         return indexPath

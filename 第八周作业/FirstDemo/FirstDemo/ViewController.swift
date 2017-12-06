@@ -57,23 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             return
         }
         let conditions = notification.object as! String
-        if conditions == "$" {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea where price='$'")
-        }else if conditions == "$$" {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea where price='$$'")
-        }else if conditions == "$$$" {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea where price='$$$'")
-        }else if conditions == "Name(A-Z)" {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea order by name asc;")
-        }else if conditions == "Distance"{
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea order by distance asc;")
-        }else if conditions == "Price" {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea order by price asc;")
-        }else if conditions == "Name(Z-A)"  {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea order by name desc;")
-        }else if conditions == "Within walking distance"  {
-            self.dataAry = self.sql.queryTeaData(sql:"SELECT * FROM Tea where distance < 500")
-        }
+        self.dataAry = self.sql.queryTeaData(sql:conditions)
         self.table.reloadData()
         
     }
