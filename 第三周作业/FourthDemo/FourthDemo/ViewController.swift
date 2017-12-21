@@ -44,47 +44,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.tableView.selectRow(at:index, animated: true, scrollPosition: UITableViewScrollPosition.none)
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.type.count
-    }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId = "TypeCell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-        if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellId)
-        }
-        let dic = self.type[indexPath.row] as! NSDictionary
-        cell?.textLabel?.text = dic.allKeys[0] as? String
-        return cell!
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell:UITableViewCell = tableView.cellForRow(at: indexPath)!
-        
-        let dic = self.type[indexPath.row] as! NSDictionary
-
-        self.detail = dic[cell.textLabel?.text as Any] as! NSArray
-        self.collecitonView.reloadData()
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.detail.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collecitonView.dequeueReusableCell(withReuseIdentifier: "TypeCell", for: indexPath) as! TypeCell
-        cell.title.text = self.detail.object(at: indexPath.row) as? String
-        return cell
-    }
     
 }
 
